@@ -70,8 +70,9 @@ resource "aws_cloudfront_distribution" "frontend_distribution" {
   }
   enabled         = true
   is_ipv6_enabled = true
-  price_class     = "PriceClass_100"
-  aliases         = [var.domain_name, "www.${var.domain_name}"]
+  web_acl_id      = "arn:aws:wafv2:us-east-1:182498323846:global/webacl/CreatedByCloudFront-64f03bb9/86a89379-afee-42c1-8bbb-272ac8da2ea0"
+  # price_class     = "PriceClass_100"
+  aliases = [var.domain_name, "www.${var.domain_name}"]
 }
 
 # Create a bucket policy to allow CloudFront to access the S3 bucket

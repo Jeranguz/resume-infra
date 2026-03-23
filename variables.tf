@@ -23,3 +23,8 @@ variable "frontend_repo" {
   description = "Front repository"
   type        = string
 }
+
+variable "backend_repo" {
+  description = "Backend repository"
+  type        = string
+}
